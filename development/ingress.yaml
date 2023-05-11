@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: psg-facts
+spec:
+  rules:
+    - host: blackhawks-facts-dev.n9oh.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: blackhawks-facts
+                port:
+                  number: 80
