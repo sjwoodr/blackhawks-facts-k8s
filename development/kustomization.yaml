@@ -7,7 +7,7 @@ images:
 
 nameSuffix: -development
 
-namespace: default
+namespace: development
 
 commonLabels:
   app: blackhawks-facts-development

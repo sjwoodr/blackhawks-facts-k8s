@@ -7,7 +7,7 @@ images:
 
 nameSuffix: -staging
 
-namespace: default
+namespace: staging
 
 commonLabels:
   app: blackhawks-facts-staging
