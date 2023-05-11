@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blackhawks-facts
+  labels:
+    app.kubernetes.io/name: blackhawks-facts
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: blackhawks-facts
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: blackhawks-facts
+        app: blackhawks-facts
+    spec:
+      containers:
+      - name: blackhawks-facts
+        image: sjwoodr/blackhawks-facts:latest
+        ports:
+          - name: http
+            containerPort: 5000

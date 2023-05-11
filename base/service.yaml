@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: blackhawks-facts
+  labels:
+    app.kubernetes.io/name: blackhawks-facts
+spec:
+  selector:
+    app.kubernetes.io/name: blackhawks-facts
+  ports:
+    - name: http
+      port: 80
+      appProtocol: HTTP
+      protocol: TCP
+      targetPort: http
