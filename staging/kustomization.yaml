@@ -7,6 +7,7 @@ images:
 
 nameSuffix: -staging
 
+#we can use a namespace transformer to only set it for those that are unset
 #namespace: staging
 
 commonLabels:
