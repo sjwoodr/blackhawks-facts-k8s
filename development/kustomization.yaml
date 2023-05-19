@@ -7,12 +7,22 @@ images:
 
 nameSuffix: -development
 
-namespace: development
+#namespace: development
 
 commonLabels:
   app: blackhawks-facts-development
 
 resources:
 - ../base
-#- ingress.yaml
 - virtualsvc.yaml
+#- ingress.yaml
+
+# we'll only set the namespace to development if its not already being set
+transformers:
+  - |-
+    apiVersion: builtin
+    kind: NamespaceTransformer
+    metadata:
+      name: notImportantHere
+      namespace: development
+    unsetOnly: true

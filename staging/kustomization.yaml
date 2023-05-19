@@ -7,7 +7,7 @@ images:
 
 nameSuffix: -staging
 
-namespace: staging
+#namespace: staging
 
 commonLabels:
   app: blackhawks-facts-staging
@@ -16,3 +16,13 @@ resources:
 - ../base
 - virtualsvc.yaml
 #- ingress.yaml
+
+# we'll only set the namespace to staging if its not already being set
+transformers:
+  - |-
+    apiVersion: builtin
+    kind: NamespaceTransformer
+    metadata:
+      name: notImportantHere
+      namespace: staging
+    unsetOnly: true
