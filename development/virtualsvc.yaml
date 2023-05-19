@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: blackhawks-facts-dev
+  namespace: istio-system
+spec:
+  gateways:
+  - gateway
+  hosts:
+  - 'blackhawks-facts-dev.n9oh.com'
+  http:
+  - route:
+    - destination:
+        host: blackhawks-facts-dev.development.svc.cluster.local
+        port:
+          number: 80
