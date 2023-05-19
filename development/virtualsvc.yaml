@@ -5,7 +5,7 @@ metadata:
   namespace: istio-system
 spec:
   gateways:
-  - gateway
+  - istio-system/gateway
   hosts:
   - 'blackhawks-facts-dev.n9oh.com'
   http:
