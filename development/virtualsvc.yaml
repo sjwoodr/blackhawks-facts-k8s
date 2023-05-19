@@ -11,6 +11,6 @@ spec:
   http:
   - route:
     - destination:
-        host: blackhawks-facts-dev.development.svc.cluster.local
+        host: blackhawks-facts-development.development.svc.cluster.local
         port:
           number: 80
